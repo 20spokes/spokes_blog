@@ -27,6 +27,7 @@ module SpokesBlog
         copy_file "views/admin/new.html.haml", "app/views/admin/spokes_blog/posts/new.html.haml"
         copy_file "views/admin/_form.html.haml", "app/views/admin/spokes_blog/posts/_form.html.haml"
         copy_file "views/admin/_block_content_form.html.haml", "app/views/admin/spokes_blog/posts/_block_content_form.html.haml"
+        copy_file "views/admin/_seo_meta_form.html.haml", "app/views/admin_spokes_blog/posts/_seo_meta_form.html.haml"
 
         #user_views
         copy_file "views/index.html.haml", "app/views/spokes_blog/posts/index.html.haml"
@@ -60,7 +61,7 @@ module SpokesBlog
       end
 
       scope module: 'spokes_blog' do
-        resources :posts
+        resources :posts, only: [:index, :show]
       end}
           end
         end

@@ -1,18 +1,25 @@
-= form_for [:admin, @post] do |f|
-  %fieldset
-    = f.label :title
-    = f.text_field :title
+%fieldset
+  = f.label :title
+  = f.text_field :title
 
-    = f.label :slug
-    = f.text_field :slug
+  = f.label :slug
+  = f.text_field :slug
 
-    = f.label :description
-    = f.text_area :description
+  = f.label :description
+  = f.text_area :description
 
-    = render "block_content_form", { f: f }
+  = render "seo_meta_form", { f: f }
 
-    = f.label :tags
-    = f.text_field :tag_list
+  = render "block_content_form", { f: f }
 
-    = f.submit "Submit"
+  = f.label :author_id
+  = f.select :author_id, options_from_collection_for_select(User.all.where(role: :admin), "id", "email", current_user.id)
+
+  = f.label :state
+  = f.select :state, options_from_collection_for_select(SpokesBlog::Post::STATES, :last, :first, @post.state)
+
+  = f.label :tags
+  = f.text_field :tag_list
+
+  = f.submit "Submit"
 

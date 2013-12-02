@@ -14,6 +14,13 @@ The gem assumes a User model and table already exist, so all that's needed is:
     bundle install
     rake db:migrate
 
+### Customization
+
+1. The post presenter assumes the User model has a `full_name` method, but this can be changed to be something application specific.
+
+2. The post model has both an `author_id` and `created_by_id`. The latter should be set by the controller, whereas the former should be editable.
+
+3. The Pageable concern adds some convenience methods such as searching by slug or an easy mapping (enum?) for document states (draft, published, archived).
 ### Directory Structure
 
     Controllers:

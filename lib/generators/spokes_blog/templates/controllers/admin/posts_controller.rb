@@ -47,7 +47,9 @@ class Admin::SpokesBlog::PostsController < ApplicationController
 
   def post_params
     params.require(:spokes_blog_post).permit(:title, :slug, :description, :tag_list,
-                                 :author_id, blocks_attributes: [:content, :id])
+                                 :author_id, :state,
+                                 blocks_attributes: [:content, :id],
+                                seo_meta_attributes: [:browser_title, :meta_description])
   end
 end
 

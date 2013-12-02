@@ -6,9 +6,12 @@ class SpokesBlog::Post < ActiveRecord::Base
   belongs_to :created_by, class_name: User
   belongs_to :author, class_name: User
   has_many :blocks, class_name: :'SpokesBlog::Block'
+  has_one :seo_meta, as: :seo_meta, class_name: :'SpokesBlog::SeoMeta'
 
   accepts_nested_attributes_for :blocks,
     reject_if: lambda { |attrs| attrs['content'].blank? }
+
+  accepts_nested_attributes_for :seo_meta
 
   validates_presence_of :title, :slug
 

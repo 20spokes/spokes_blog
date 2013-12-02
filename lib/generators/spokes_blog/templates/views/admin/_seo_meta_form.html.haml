@@ -1,0 +1,7 @@
+= f.fields_for :seo_meta, @post.seo_meta||SpokesBlog::SeoMeta.new do |meta|
+  = meta.label :browser_title
+  = meta.text_field :browser_title
+
+  = meta.label :meta_description
+  = meta.text_field :meta_description
+
