@@ -1,0 +1,26 @@
+%h1 Posts
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Author
+      %th Created by
+      %th Template
+      %th Tags
+      %th Updated at
+  %tbody
+
+:javascript
+  $(document).ready(function() {
+    $('.table').dataTable({
+      "bProcessing": true,
+      "sAjaxSource": "/admin/spokes_blog/posts.json",
+      "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+      "sPaginationType": "bootstrap"
+      });
+
+    $.extend($.fin.dataTableExt.oStdClasses, {
+      "sWrapper": "dataTables_wrapper form-inline"
+    });
+  });
+

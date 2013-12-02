@@ -1,0 +1,6 @@
+= @presenter.title
+= @presenter.published_at
+= @presenter.author
+- @presenter.blocks.each do |block|
+  = block.content.html_safe
+

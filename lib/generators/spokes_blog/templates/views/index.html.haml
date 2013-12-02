@@ -1,0 +1,11 @@
+- @posts.each do |post|
+  = post.title
+  = post.updated_at
+  = post.author.full_name
+  - if post.excerpt.blank? || post.excerpt.length > 500
+    = post.blocks.first.content.truncate(500)
+  - else
+    = post.excerpt
+
+= paginate @posts
+

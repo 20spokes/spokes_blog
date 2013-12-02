@@ -1,0 +1,22 @@
+Description:
+   This sets up a basic blog structure. Make sure to run migrations afterwards! 
+
+Example:
+    rails generate spokes_blog
+
+    This will create:
+        Controllers:
+          admin/spokes_blog/posts_controller.rb - admin ctrl
+          spokes_blog/posts_controller.rb - public ctrl
+        Models:
+          spokes_blog/ - post, block, seo_meta
+          spokes_blog/concerns - pageable
+        Views (empty, mainly as api documentation)
+          admin/spokes_blog/posts
+          spokes_blog/posts
+        Presenters
+          presenters/presenter.rb - base presenter class
+          presenters/post_presenter.rb
+        Migrations
+        It will also update routes.rb and application rb.
+

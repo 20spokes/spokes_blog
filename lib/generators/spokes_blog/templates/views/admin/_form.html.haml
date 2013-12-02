@@ -1,0 +1,18 @@
+= form_for [:admin, @post] do |f|
+  %fieldset
+    = f.label :title
+    = f.text_field :title
+
+    = f.label :slug
+    = f.text_field :slug
+
+    = f.label :description
+    = f.text_area :description
+
+    = render "block_content_form", { f: f }
+
+    = f.label :tags
+    = f.text_field :tag_list
+
+    = f.submit "Submit"
+
