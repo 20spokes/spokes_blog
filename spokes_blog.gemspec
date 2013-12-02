@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matt.obarzanek@20spokes.com", "ryan.fischer@20spokes.com"]
   spec.description   = %q{Simple blog scaffolding that can be added to almost any existing Rails site.}
   spec.summary       = %q{Setups basic blog structure for rails}
-  spec.homepage      = "http://www.20spokes.com/"
+  spec.homepage      = "https://github.com/20spokes/spokes_blog"
   spec.license       = "MIT"
 
   spec.files = Dir.glob("{lib}/**/*")
