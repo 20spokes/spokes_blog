@@ -26,7 +26,7 @@ module Pageable
 
   module ClassMethods
     def by_slug(slug)
-      self.find_by(slug: slug)
+      self.find_by!(slug: slug)
     end
 
     def by_template(template)
